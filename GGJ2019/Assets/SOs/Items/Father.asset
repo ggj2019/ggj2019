@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e49ba09b04628ee4e8ba9ca45d2dd163, type: 3}
-  m_Name: testSO
+  m_Name: Father
   m_EditorClassIdentifier: 
-  unitStatus: 0
-  peopleIcon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  ObjectIcon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  unitStatus: 2
+  peopleIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  objectIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  objName: Father

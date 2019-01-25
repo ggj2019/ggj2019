@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49ba09b04628ee4e8ba9ca45d2dd163, type: 3}
-  m_Name: testSO 2
+  m_Script: {fileID: 11500000, guid: 49ea7ef8366519f418d5157db3eb095a, type: 3}
+  m_Name: GeneratorSO
   m_EditorClassIdentifier: 
-  unitStatus: 3
-  peopleIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  ObjectIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  objName: 
+  units:
+  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}

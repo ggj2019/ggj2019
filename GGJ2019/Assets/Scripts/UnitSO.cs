@@ -7,5 +7,7 @@ public class UnitSO : ScriptableObject
 {
     public UnitStatus unitStatus;
     public Sprite peopleIcon;
-    public Sprite ObjectIcon;
+    public Sprite objectIcon;
+    public string objName;
+    public bool dead;
 }

@@ -12,13 +12,17 @@ public class UnitSystem : MonoBehaviour
 
     void Start()
     {
-        
+    
     }
 
     void Update()
     {
-        Change(transform);
-        UpdateUnitSO(unitSO);
+        if(unitStatus != unitSO.unitStatus)
+        {
+            unitStatus = unitSO.unitStatus;
+            Change(transform);
+        }
+        
     }
 
     void UpdateUnitSO(UnitSO unitSO)

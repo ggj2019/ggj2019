@@ -6,6 +6,8 @@ public class ObjectBehavior : MonoBehaviour
 {
     public UnitSO unitSO;
 
+    public ListSO lostSO;
+
     [HideInInspector]
     public ListSO generatorSO;
 
@@ -16,7 +18,7 @@ public class ObjectBehavior : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         if (unitSO)
         {
-            sr.sprite = unitSO.ObjectIcon;
+            sr.sprite = unitSO.objectIcon;
         }
     }
 
@@ -25,7 +27,7 @@ public class ObjectBehavior : MonoBehaviour
     {        
         if(sr.enabled == false && unitSO)
         {
-            sr.sprite = unitSO.ObjectIcon;
+            sr.sprite = unitSO.objectIcon;
             sr.enabled = true;
         }
     }
@@ -37,9 +39,12 @@ public class ObjectBehavior : MonoBehaviour
         {
             controller.packSO.units.Add(unitSO);
             controller.UpdatePack();
+            if (generatorSO && generatorSO.units.Contains(unitSO))
+            {
+                generatorSO.units.Remove(unitSO);
+            }
+            lostSO.units.Remove(unitSO);
+            Destroy(gameObject);
         }
-        generatorSO.units.Remove(unitSO);
-        Destroy(gameObject);
-
     }
 }

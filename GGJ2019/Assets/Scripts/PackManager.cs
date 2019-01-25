@@ -34,14 +34,14 @@ public class PackManager : MonoBehaviour
         }
         else if(count == 1)
         {
-            item0.sprite = packSO.units[0].ObjectIcon;
+            item0.sprite = packSO.units[0].objectIcon;
             item0.enabled = true;
             item1.enabled = false;
         }
         else if(count == 2)
         {
-            item0.sprite = packSO.units[0].ObjectIcon;
-            item1.sprite = packSO.units[1].ObjectIcon;
+            item0.sprite = packSO.units[0].objectIcon;
+            item1.sprite = packSO.units[1].objectIcon;
             item0.enabled = true;
             item1.enabled = true;
         }
