@@ -10,6 +10,7 @@ public class GlobalControl : MonoBehaviour
     public int normalIndex;
 
     public float time;
+
     public Vector3 npcPos;
     public Vector3 npcDir;
 
@@ -19,10 +20,15 @@ public class GlobalControl : MonoBehaviour
 
     public bool spawnLeave = false;
 
-    public  List<CharacterItem> leaveList;
+    public List<CharacterItem> leaveList;
+
+    public UnitSO[] stayArray;
+
+    static bool changed;
 
     private void Awake()
     {
+        changed = false;
         if (Instance == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -37,9 +43,10 @@ public class GlobalControl : MonoBehaviour
 
     private void Update()
     {
-        if(time < 0)
+        if(time < 0 && !changed)
         {
             SceneManager.LoadScene(normalIndex);
+            changed = true;
         }
         
     }

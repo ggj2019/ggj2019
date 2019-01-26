@@ -12,11 +12,11 @@ public class NPCBehavior : MonoBehaviour
         {
             //Debug.Log(npcSO.currentPos + " " + Vector3.Distance(npcSO.currentPos, new Vector3(0, 0, 0)) + " " + (npcSO.lengthLimit - 1));
 
-            Debug.Log("here wtf");
+            //Debug.Log("here wtf");
             unitSO.dead = true;
             Destroy(gameObject);
         }
-        Debug.Log("come");
+        //Debug.Log("come");
         transform.position = GlobalControl.Instance.npcPos + (npcSO.lengthLimit / npcSO.timeLimit) * Time.deltaTime * GlobalControl.Instance.npcDir.normalized;
         GlobalControl.Instance.npcPos = transform.position;
 

@@ -45,23 +45,30 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         //Resources.Load();
-        int count = (int)(GlobalControl.Instance.time / timerSO.round);
-        timeText.text = count.ToString();
-        timeImage.fillAmount = (GlobalControl.Instance.time / timerSO.round) - count;
-        float oldTime = GlobalControl.Instance.time;
-        if(GlobalControl.Instance.time - Time.deltaTime < 0)
+        
+        if(GlobalControl.Instance.time > 0)
         {
-            GlobalControl.Instance.time = 0;
-        }
-        else
-        {
-            GlobalControl.Instance.time -= Time.deltaTime;
-            if (Mathf.CeilToInt(oldTime) != Mathf.CeilToInt(GlobalControl.Instance.time) && Mathf.CeilToInt(GlobalControl.Instance.time) % timerSO.round == 0)
+            int count = (int)(GlobalControl.Instance.time / timerSO.round);
+            timeText.text = count.ToString();
+            timeImage.fillAmount = (GlobalControl.Instance.time / timerSO.round) - count;
+            float oldTime = GlobalControl.Instance.time;
+
+            if (GlobalControl.Instance.time - Time.deltaTime < 0)
             {
-                //Debug.Log("here");
-                Tick();
+                GlobalControl.Instance.time = -0.5f;
+            }
+            else
+            {
+                GlobalControl.Instance.time -= Time.deltaTime;
+                if (Mathf.CeilToInt(oldTime) != Mathf.CeilToInt(GlobalControl.Instance.time) && Mathf.CeilToInt(GlobalControl.Instance.time) % timerSO.round == 0)
+                {
+                    //Debug.Log("here");
+                    Tick();
+                }
             }
         }
+
+        
     }
 
     void Tick()
@@ -114,12 +121,6 @@ public class TimerManager : MonoBehaviour
 
             GameObject tempObj = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
 
-
-            
-            //Destroy(tempSpawner);
-            
-            //objBe.generatorSO = generatorSO;
-
         }
 
     }
@@ -143,10 +144,5 @@ public class TimerManager : MonoBehaviour
         dest.unitStatus = source.unitStatus;
         dest.objectIcon = source.objectIcon;
         dest.peopleIcon = source.peopleIcon;
-    }
-
-    void CreateObj(GameObject obj)
-    {
-        //objNew = Instantiate(obj, obj.transform.position - new Vector3(1, 1, 0),obj.transform.rotation);
     }
 }

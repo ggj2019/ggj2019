@@ -34,15 +34,25 @@ public class UnitManager : MonoBehaviour
             mStayHomeUnits = totalUnit.units.Take(3).ToArray();
             mLeaveHomeUnits = totalUnit.units.Skip(3).ToArray();
 
-            mLeaveHomeUnits[0].unitStatus = UnitStatus.Empty;
-            mLeaveHomeUnits[1].unitStatus = UnitStatus.Empty;
-            mLeaveHomeUnits[2].unitStatus = UnitStatus.Empty;
+            for(int i = 0; i < 3; i++)
+            {
+                mLeaveHomeUnits[i].unitStatus = UnitStatus.Empty;
+                mLeaveHomeUnits[i].dead = false;
+            }
+
 
             //Debug.Log(mLeaveHomeUnits[0].objName +" "+ mLeaveHomeUnits[1].objName);
 
-            mStayHomeUnits[0].unitStatus = UnitStatus.People;
-            mStayHomeUnits[1].unitStatus = UnitStatus.People;
-            mStayHomeUnits[2].unitStatus = UnitStatus.People;
+            for (int i = 0; i < 3; i++)
+            {
+                mStayHomeUnits[i].unitStatus = UnitStatus.People;
+                mStayHomeUnits[i].dead = false;
+            }
+            GlobalControl.Instance.stayArray = mStayHomeUnits;
+
+            //mStayHomeUnits[0].unitStatus = UnitStatus.People;
+            //mStayHomeUnits[1].unitStatus = UnitStatus.People;
+            //mStayHomeUnits[2].unitStatus = UnitStatus.People;
 
             mInit = true;
             isDirty = true;

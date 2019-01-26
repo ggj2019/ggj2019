@@ -38,13 +38,13 @@ public class NPCBase : MonoBehaviour
 
         if(showSO.units.Count == 1)
         {
-            //Debug.Log("here");
             npc.GetComponent<NPCBehavior>().unitSO = showSO.units[0];
             tempNPC = Instantiate(npc);
 
             objTemplete.GetComponent<ObjectBehavior>().unitSO = showSO.units[0];
             temp = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
             playerArrow.GetComponent<PlayerArrow>().npcGO = temp;
+
             headIconUI.unitSO_test = showSO.units[0];
             headIconUI.currentNPC = tempNPC;
             headIconUI.enabled = true;

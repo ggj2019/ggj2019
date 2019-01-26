@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49ba09b04628ee4e8ba9ca45d2dd163, type: 3}
   m_Name: Cat
   m_EditorClassIdentifier: 
-  unitStatus: 0
+  unitStatus: 3
   peopleIcon: {fileID: 21300000, guid: e1be9cf7d8c37cb4bbf5015d333a0acb, type: 3}
   objectIcon: {fileID: 21300000, guid: 627252fa5f69e864c932c2a6b4826224, type: 3}
   objName: Cat

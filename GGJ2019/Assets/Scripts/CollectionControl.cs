@@ -14,7 +14,7 @@ public class CollectionControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(UnitManager.Instance.isDirty);
+        //Debug.Log(UnitManager.Instance.isDirty);
         if (UnitManager.Instance.isDirty)
         {
             for(int j = 0; j < transform.childCount; j++)

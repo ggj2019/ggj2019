@@ -46,9 +46,9 @@ public class HeadIconUI : MonoBehaviour
         {
             
             bool gone = true;
-            for(int i = 0; i < totalSO.units.Count;i++)
+            for(int i = 0; i < totalSO.units.Count; i++)
             {
-                if(totalSO.units[i].unitStatus == UnitStatus.People || totalSO.units[i].unitStatus == UnitStatus.Object)
+                if(totalSO.units[i].unitStatus == UnitStatus.People || totalSO.units[i].unitStatus == UnitStatus.Union)
                 {
                     gone = false;
                     break;
