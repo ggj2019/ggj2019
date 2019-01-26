@@ -17,8 +17,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        var dstPoint = mPlayerTransform.position + Vector3.forward * distance;
+        var dstPoint = mPlayerTransform.position - Vector3.forward * distance;
         transform.position = Vector3.Lerp(transform.position, dstPoint, tweenSpeed * Time.smoothDeltaTime);
-        transform.forward = -Vector3.forward;
+        transform.forward = Vector3.forward;
     }
 }
