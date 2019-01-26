@@ -4,36 +4,39 @@ using UnityEngine;
 
 public class CharacterItemsSpawner : MonoBehaviour
 {
+    static CharacterItemsSpawner mInstance;
+    public static CharacterItemsSpawner Instance { get { return mInstance; } }
+
     static bool mIsInited;
+    static List<CharacterItem> instancedCharacterItemList;
 
     [SerializeField]
     NPCSO npcSO;
 
     [SerializeField]
-    CharacterItemSO instancedCharacterItemSO;
-
-    [SerializeField]
     ListSO characterInfoSO;
 
-    public CharacterItemSO InstancedCharacterItemSO { get { return instancedCharacterItemSO; } }
+    public List<CharacterItem> InstancedCharacterItemList { get { return instancedCharacterItemList; } }
 
 
     void OnEnable()
     {
+        mInstance = this;
+
         if (!mIsInited)
         {
-            instancedCharacterItemSO.items.Clear();
+            instancedCharacterItemList.Clear();
 
             foreach (var item in characterInfoSO.units)
             {
                 var point = Random.insideUnitCircle;
                 point *= npcSO.lengthLimit;
 
-                instancedCharacterItemSO.items.Add(new CharacterItemSO.ItemInfo() { unit = item, targetItem = null, position = point });
+                instancedCharacterItemList.Add(new CharacterItem() { unit = item, targetItem = null, position = point });
             }
         }
 
-        foreach (var item in instancedCharacterItemSO.items)
+        foreach (var item in instancedCharacterItemList)
         {
             var go = new GameObject(item.unit.name + "_item");
             go.transform.SetParent(transform);
