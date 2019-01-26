@@ -52,6 +52,15 @@ public class ObjectBehavior : MonoBehaviour
             {
                 generatorSO.units.Remove(unitSO);
             }
+            for(int i = 0; i < GlobalControl.Instance.leaveList.Count; i++)
+            {
+                if(GlobalControl.Instance.leaveList[i].unit = unitSO)
+                {
+                    Debug.Log("fuck?");
+                    GlobalControl.Instance.leaveList.Remove(GlobalControl.Instance.leaveList[i]);
+                    break;
+                }
+            }
 
             showSO.units.Remove(unitSO);
 

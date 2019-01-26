@@ -29,6 +29,8 @@ public class TimerManager : MonoBehaviour
 
     public GameObject objTemplete;
 
+    public HeadIconUI headIconUI;
+
     GameObject tempSpawner;
     // Start is called before the first frame update
     void Start()
@@ -94,6 +96,11 @@ public class TimerManager : MonoBehaviour
             RandomNewNPC(npcBe.npcSO);
             npcNew = Instantiate(npc);
 
+            headIconUI.unitSO_test = specialSO;
+            headIconUI.currentNPC = npcNew;
+
+            headIconUI.enabled = true;
+
             // create obj 
             obj.GetComponent<ObjectBehavior>().unitSO = specialSO;
 
@@ -107,6 +114,8 @@ public class TimerManager : MonoBehaviour
 
             GameObject tempObj = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
 
+
+            
             //Destroy(tempSpawner);
             
             //objBe.generatorSO = generatorSO;

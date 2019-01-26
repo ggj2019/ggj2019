@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HeadIconUI : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class HeadIconUI : MonoBehaviour
 
     public GameObject currentNPC;
     public Image headPhotoImage;
+
+    public ListSO totalSO;
+
+    public int goneIndex;
+
     public Gradient currentNPCToEdgeGradient = new Gradient()
     {
         colorKeys = new GradientColorKey[]
@@ -38,7 +44,22 @@ public class HeadIconUI : MonoBehaviour
         }
         else
         {
+            
+            bool gone = true;
+            for(int i = 0; i < totalSO.units.Count;i++)
+            {
+                if(totalSO.units[i].unitStatus == UnitStatus.People || totalSO.units[i].unitStatus == UnitStatus.Object)
+                {
+                    gone = false;
+                    break;
+                }
+            }
+            if (gone)
+            {
+                SceneManager.LoadScene(goneIndex);
+            }
             headPhotoImage.enabled = false;
+            GetComponent<HeadIconUI>().enabled = false;
         }
     }
 }
