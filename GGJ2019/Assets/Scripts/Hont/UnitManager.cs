@@ -19,6 +19,8 @@ public class UnitManager : MonoBehaviour
     public UnitSO[] LeaveHomeUnits { get { return mLeaveHomeUnits; } }
 
 
+    public bool isDirty = false;
+
     void Awake()
     {
         mInstance = this;
@@ -27,10 +29,19 @@ public class UnitManager : MonoBehaviour
         {
             Shuffle(totalUnit.units);
 
-            mStayHomeUnits = totalUnit.units.Take(4).ToArray();
-            mLeaveHomeUnits = totalUnit.units.Skip(4).ToArray();
+            mStayHomeUnits = totalUnit.units.Take(2).ToArray();
+            mLeaveHomeUnits = totalUnit.units.Skip(2).ToArray();
+
+            mLeaveHomeUnits[0].unitStatus = UnitStatus.Empty;
+            mLeaveHomeUnits[1].unitStatus = UnitStatus.Empty;
+
+            Debug.Log(mLeaveHomeUnits[0].objName +" "+ mLeaveHomeUnits[1].objName);
+
+            mStayHomeUnits[0].unitStatus = UnitStatus.People;
+            mStayHomeUnits[1].unitStatus = UnitStatus.People;
 
             mInit = true;
+            isDirty = true;
         }
     }
 

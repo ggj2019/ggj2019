@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Map Scene.unity
     guid: 362d5b5ea2e81544fb2ff92a1611c016
   - enabled: 1
-    path: Assets/Scenes/Photo Scene.unity
+    path: Assets/Scenes/End - Lost.unity
     guid: 7e4d7daf995c0584aa780b43ea374b3c
   m_configObjects: {}

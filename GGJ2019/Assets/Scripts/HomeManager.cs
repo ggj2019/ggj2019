@@ -38,6 +38,13 @@ public class HomeManager : MonoBehaviour
     {
         for(int i = 0; i < packSO.units.Count; i++)
         {
+            int index = System.Array.IndexOf(UnitManager.Instance.LeaveHomeUnits, packSO.units[i]);
+            if (index >= 0)
+            {
+                System.Array.Clear(UnitManager.Instance.LeaveHomeUnits, index, 1);
+                UnitManager.Instance.isDirty = true;
+            }
+      
             if (!packSO.units[i].dead)
             {
                 packSO.units[i].unitStatus = UnitStatus.Union;

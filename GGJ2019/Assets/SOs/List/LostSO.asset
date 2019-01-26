@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ea7ef8366519f418d5157db3eb095a, type: 3}
   m_Name: LostSO
   m_EditorClassIdentifier: 
-  units: []
+  units:
+  - {fileID: 11400000, guid: bce171e6706c6a346a4b6a9487644ec5, type: 2}
+  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}

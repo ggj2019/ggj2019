@@ -19,6 +19,7 @@ public class HomeBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        UnitManager.Instance.isDirty = true;
         SceneManager.LoadScene(sceneIndex);
     }
 

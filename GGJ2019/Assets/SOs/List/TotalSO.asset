@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: TotalSO
   m_EditorClassIdentifier: 
   units:
+  - {fileID: 11400000, guid: c20dc2a23c13c144fb045b85dc8fd5a4, type: 2}
   - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
   - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
-  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
-  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
-  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
-  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
-  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
-  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
+  - {fileID: 11400000, guid: bce171e6706c6a346a4b6a9487644ec5, type: 2}
