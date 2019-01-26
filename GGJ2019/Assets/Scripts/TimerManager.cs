@@ -98,7 +98,7 @@ public class TimerManager : MonoBehaviour
             obj.GetComponent<ObjectBehavior>().unitSO = specialSO;
 
             objSpawner.GetComponent<CharacterItemsSpawner>().npcSO = npcBe.npcSO;
-            objSpawner.GetComponent<CharacterItemsSpawner>().characterInfoSO = showSO;
+            objSpawner.GetComponent<CharacterItemsSpawner>().soList = new UnitSO[] { specialSO };
 
             tempSpawner = Instantiate(objSpawner);
             GlobalControl.Instance.objPos = tempSpawner.GetComponent<CharacterItemsSpawner>().InstancedCharacterItemList[0].position;
@@ -106,6 +106,8 @@ public class TimerManager : MonoBehaviour
             objTemplete.GetComponent<ObjectBehavior>().unitSO = specialSO;
 
             GameObject tempObj = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
+
+            //Destroy(tempSpawner);
             
             //objBe.generatorSO = generatorSO;
 

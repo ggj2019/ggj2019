@@ -12,7 +12,9 @@ public class CharacterItemsSpawner : MonoBehaviour
 
     public NPCSO npcSO;
 
-    public ListSO characterInfoSO;
+    //public ListSO characterInfoSO;
+
+    public UnitSO[] soList;
 
     public List<CharacterItem> InstancedCharacterItemList { get { return instancedCharacterItemList; } }
 
@@ -25,7 +27,7 @@ public class CharacterItemsSpawner : MonoBehaviour
         {
             instancedCharacterItemList.Clear();
 
-            foreach (var item in characterInfoSO.units)
+            foreach (var item in soList)
             {
                 var point = Random.insideUnitCircle;
                 point *= npcSO.lengthLimit;
