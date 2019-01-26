@@ -10,30 +10,29 @@ public class CharacterItemsSpawner : MonoBehaviour
     NPCSO npcSO;
 
     [SerializeField]
-    CharacterItemSO instancedCharacterItemSO;
-
-    [SerializeField]
     ListSO characterInfoSO;
 
-    public CharacterItemSO InstancedCharacterItemSO { get { return instancedCharacterItemSO; } }
+    List<CharacterItem> instancedCharacterItemList;
+
+    public List<CharacterItem> InstancedCharacterItemList { get { return instancedCharacterItemList; } }
 
 
     void OnEnable()
     {
         if (!mIsInited)
         {
-            instancedCharacterItemSO.items.Clear();
+            instancedCharacterItemList.Clear();
 
             foreach (var item in characterInfoSO.units)
             {
                 var point = Random.insideUnitCircle;
                 point *= npcSO.lengthLimit;
 
-                instancedCharacterItemSO.items.Add(new CharacterItemSO.ItemInfo() { unit = item, targetItem = null, position = point });
+                instancedCharacterItemList.Add(new CharacterItem() { unit = item, targetItem = null, position = point });
             }
         }
 
-        foreach (var item in instancedCharacterItemSO.items)
+        foreach (var item in instancedCharacterItemList)
         {
             var go = new GameObject(item.unit.name + "_item");
             go.transform.SetParent(transform);
