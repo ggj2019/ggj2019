@@ -8,6 +8,8 @@ public class ObjectBehavior : MonoBehaviour
 
     public ListSO lostSO;
 
+    public ListSO showSO;
+
     [HideInInspector]
     public ListSO generatorSO;
 
@@ -43,6 +45,9 @@ public class ObjectBehavior : MonoBehaviour
             {
                 generatorSO.units.Remove(unitSO);
             }
+
+            showSO.units.Remove(unitSO);
+
             lostSO.units.Remove(unitSO);
             Destroy(gameObject);
         }

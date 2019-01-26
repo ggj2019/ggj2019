@@ -6,6 +6,9 @@ using UnityEngine;
 public class NPCSO : ScriptableObject
 {
     public float lengthLimit;
+
+    public float effectLength;
+
     public float timeLimit;
 
     public Vector3 currentPos;

@@ -14,6 +14,9 @@ public class TimerManager : MonoBehaviour
     public GameObject npc;
     public GameObject obj;
 
+    public ListSO showSO;
+
+    [HideInInspector]
     public UnitSO specialSO;
 
     GameObject npcNew;
@@ -69,10 +72,13 @@ public class TimerManager : MonoBehaviour
         if(lostSO.units.Count != 0)
         {
             specialSO = RandomUnit(lostSO);
+            showSO.units.Clear();
+            showSO.units.Add(specialSO);
+            specialSO.unitStatus = UnitStatus.Empty;
 
             // random and create npc movement;
             NPCBehavior npcBe = npc.GetComponent<NPCBehavior>();
-            //npcBe.unitSO = specialSO;
+            npcBe.unitSO = specialSO;
             RandomNewNPC(npcBe.npcSO);
             npcNew = Instantiate(npc);
 

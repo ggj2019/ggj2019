@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Controller : MonoBehaviour
 
     public GameObject pack;
 
+    public NPCSO npcSO;
+
+    public Image backgroundImg;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +43,32 @@ public class Controller : MonoBehaviour
         {
             transform.position += new Vector3(1, 0, 0) * velocity;
         }
-        
+
+
+        UpdateMask(backgroundImg);
     }
 
     public void UpdatePack()
     {
         pack.GetComponent<PackManager>().UpdatePack();
+    }
+
+    void UpdateMask(Image img)
+    {
+        float length = Vector3.Distance(transform.position, new Vector3(0, 0, 0));
+        Color color = img.color;
+        if (length + npcSO.effectLength >= npcSO.lengthLimit)
+        {
+            float alpha = 1 - ((npcSO.lengthLimit - length) / npcSO.effectLength);
+
+            //Debug.Log(alpha + " " + length + " " + (int)((npcSO.lengthLimit - length) / npcSO.effectLength * 255));
+
+            img.color = new Color(color.r, color.g, color.b, alpha);
+        }
+        else
+        {
+            img.color = new Color(color.r, color.g, color.b, 0);
+        }
+        
     }
 }

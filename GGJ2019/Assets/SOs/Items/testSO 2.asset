@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitStatus: 3
   peopleIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  ObjectIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  objectIcon: {fileID: 0}
   objName: 
+  dead: 0

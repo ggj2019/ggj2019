@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab8f7c32cb547b4783c6f5bc4c25fff, type: 3}
-  m_Name: NPCSO
+  m_Script: {fileID: 11500000, guid: 49ea7ef8366519f418d5157db3eb095a, type: 3}
+  m_Name: showSO
   m_EditorClassIdentifier: 
-  lengthLimit: 20
-  timeLimit: 4
-  currentPos: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
+  units: []
