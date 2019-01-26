@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 1332090834047216224, guid: a2ac1406c22d26c4d83b4620d4faf60b, type: 3}
+  objTemplete: {fileID: 7414558816779595289, guid: aa74eb4dc0d050443bdc45d1b46c8830,
+    type: 3}
   npcSO: {fileID: 11400000, guid: d24aaf62c2386a141a7093c03ffe7bd1, type: 2}
   showSO: {fileID: 11400000, guid: b87d61b2caa09294185b0ddad4e17a8b, type: 2}
 --- !u!1 &592215135
@@ -377,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tweenSpeed: 17
-  distance: -5
+  distance: 5
 --- !u!1 &647281473
 GameObject:
   m_ObjectHideFlags: 0

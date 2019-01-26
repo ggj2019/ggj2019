@@ -19,7 +19,10 @@ public class NPCBase : MonoBehaviour
             Debug.Log("here");
             npc.GetComponent<NPCBehavior>().unitSO = showSO.units[0];
             Instantiate(npc);
-            
+
+            objTemplete.GetComponent<ObjectBehavior>().unitSO = showSO.units[0];
+            Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
+
         }
 
         

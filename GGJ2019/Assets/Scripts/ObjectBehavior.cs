@@ -32,6 +32,13 @@ public class ObjectBehavior : MonoBehaviour
             sr.sprite = unitSO.objectIcon;
             sr.enabled = true;
         }
+
+        if (unitSO.dead)
+        {
+            showSO.units.Remove(unitSO);
+            lostSO.units.Remove(unitSO);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

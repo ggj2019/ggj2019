@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab8f7c32cb547b4783c6f5bc4c25fff, type: 3}
   m_Name: NPCSO
   m_EditorClassIdentifier: 
-  lengthLimit: 30
-  effectLength: 20
-  timeLimit: 6
-  currentPos: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
+  lengthLimit: 20
+  effectLength: 5
+  timeLimit: 10

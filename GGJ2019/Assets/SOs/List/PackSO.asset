@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ea7ef8366519f418d5157db3eb095a, type: 3}
   m_Name: PackSO
   m_EditorClassIdentifier: 
-  units: []
+  units:
+  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
+  - {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
