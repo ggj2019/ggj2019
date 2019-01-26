@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSO: {fileID: 11400000, guid: 892c8e8e8a9e881468840b922209541a, type: 2}
   lostSO: {fileID: 0}
+  showSO: {fileID: 0}
   generatorSO: {fileID: 0}
 --- !u!61 &592215137
 BoxCollider2D:
@@ -426,6 +427,7 @@ MonoBehaviour:
   lostSO: {fileID: 11400000, guid: 607bf0ea224786e47a949886b3bae0a2, type: 2}
   npc: {fileID: 1332090834047216224, guid: a2ac1406c22d26c4d83b4620d4faf60b, type: 3}
   obj: {fileID: 7414558816779595289, guid: aa74eb4dc0d050443bdc45d1b46c8830, type: 3}
+  showSO: {fileID: 0}
   specialSO: {fileID: 0}
 --- !u!1 &885159177
 GameObject:
@@ -548,6 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSO: {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
   lostSO: {fileID: 0}
+  showSO: {fileID: 0}
   generatorSO: {fileID: 0}
 --- !u!1 &1142917649
 GameObject:
@@ -1038,6 +1041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSO: {fileID: 11400000, guid: a506d68dda8ecfe4d872482f9f86e23f, type: 2}
   lostSO: {fileID: 0}
+  showSO: {fileID: 0}
   generatorSO: {fileID: 0}
 --- !u!61 &1701278821
 BoxCollider2D:
@@ -1450,6 +1454,8 @@ MonoBehaviour:
   velocity: 0.1
   packSO: {fileID: 11400000, guid: a6c057394c6c1b64897da32e19c0ce02, type: 2}
   pack: {fileID: 1781723765}
+  npcSO: {fileID: 0}
+  backgroundImg: {fileID: 0}
 --- !u!50 &2080758250
 Rigidbody2D:
   serializedVersion: 4

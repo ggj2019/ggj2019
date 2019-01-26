@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ea7ef8366519f418d5157db3eb095a, type: 3}
-  m_Name: CharacterItemsSO
+  m_Script: {fileID: 11500000, guid: 251e87e3301982646b99cb99bbaf927e, type: 3}
+  m_Name: ObjInstancedSO
   m_EditorClassIdentifier: 
-  units:
-  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
-  - {fileID: 11400000, guid: 11b471cd17a08924b8751c3c638b94da, type: 2}
+  items: []

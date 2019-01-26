@@ -28,27 +28,28 @@ public class TimerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        //timerSO = Resources.Load<TimerSO>("SOs/Timer/TimerSO");
-        //Debug.Log(timerSO.GetHashCode());
+        if (!GlobalControl.Instance.timeIsSet){
+            GlobalControl.Instance.time = timerSO.timeLimit;
+            GlobalControl.Instance.timeIsSet = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //Resources.Load();
-        int count = (int)(timerSO.current / timerSO.round);
+        int count = (int)(GlobalControl.Instance.time / timerSO.round);
         timeText.text = count.ToString();
-        timeImage.fillAmount = (timerSO.current / timerSO.round) - count;
-        float oldTime = timerSO.current;
-        if(timerSO.current - Time.deltaTime < 0)
+        timeImage.fillAmount = (GlobalControl.Instance.time / timerSO.round) - count;
+        float oldTime = GlobalControl.Instance.time;
+        if(GlobalControl.Instance.time - Time.deltaTime < 0)
         {
-            timerSO.current = 0;
+            GlobalControl.Instance.time = 0;
         }
         else
         {
-            timerSO.current -= Time.deltaTime;
-            if (Mathf.CeilToInt(oldTime) != Mathf.CeilToInt(timerSO.current) && Mathf.CeilToInt(timerSO.current) % timerSO.round == 0)
+            GlobalControl.Instance.time -= Time.deltaTime;
+            if (Mathf.CeilToInt(oldTime) != Mathf.CeilToInt(GlobalControl.Instance.time) && Mathf.CeilToInt(GlobalControl.Instance.time) % timerSO.round == 0)
             {
                 //Debug.Log("here");
                 Tick();
@@ -58,7 +59,6 @@ public class TimerManager : MonoBehaviour
 
     void Tick()
     {
-        
         if (npcNew && specialSO)
         {
             specialSO.dead = true;
@@ -73,6 +73,7 @@ public class TimerManager : MonoBehaviour
             specialSO.unitStatus = UnitStatus.Empty;
         }
         lostSO.units.Remove(specialSO);
+
         // get random special
         //CopyUnitSO(RandomUnit(lostSO), specialSO);
         if(lostSO.units.Count != 0)
@@ -91,15 +92,15 @@ public class TimerManager : MonoBehaviour
             // create obj 
             obj.GetComponent<ObjectBehavior>().unitSO = specialSO;
             CreateObj(obj);
-            //Instantiate(obj);
         }
 
     }
 
     void RandomNewNPC(NPCSO npcSO)
     {
-        npcSO.currentPos = new Vector3(0, 0, 0);
-        npcSO.dir = Random.insideUnitCircle;
+        Debug.Log("Random a npc");
+        GlobalControl.Instance.npcPos = new Vector3(0, 0, 0);
+        GlobalControl.Instance.npcDir = Random.insideUnitCircle;
         npcSO.timeLimit = timerSO.round;
     }
 
