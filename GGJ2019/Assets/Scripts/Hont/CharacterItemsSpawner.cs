@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class CharacterItemsSpawner : MonoBehaviour
 {
+    static CharacterItemsSpawner mInstance;
+    public static CharacterItemsSpawner Instance { get { return mInstance; } }
+
     static bool mIsInited;
+    static List<CharacterItem> instancedCharacterItemList;
 
     [SerializeField]
     NPCSO npcSO;
@@ -12,13 +16,13 @@ public class CharacterItemsSpawner : MonoBehaviour
     [SerializeField]
     ListSO characterInfoSO;
 
-    List<CharacterItem> instancedCharacterItemList;
-
     public List<CharacterItem> InstancedCharacterItemList { get { return instancedCharacterItemList; } }
 
 
     void OnEnable()
     {
+        mInstance = this;
+
         if (!mIsInited)
         {
             instancedCharacterItemList.Clear();
