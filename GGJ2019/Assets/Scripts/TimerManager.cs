@@ -25,6 +25,11 @@ public class TimerManager : MonoBehaviour
     GameObject npcNew;
     GameObject objNew;
 
+    public GameObject objSpawner;
+
+    public GameObject objTemplete;
+
+    GameObject tempSpawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +96,19 @@ public class TimerManager : MonoBehaviour
 
             // create obj 
             obj.GetComponent<ObjectBehavior>().unitSO = specialSO;
-            CreateObj(obj);
+
+            objSpawner.GetComponent<CharacterItemsSpawner>().npcSO = npcBe.npcSO;
+            objSpawner.GetComponent<CharacterItemsSpawner>().characterInfoSO = showSO;
+
+            tempSpawner = Instantiate(objSpawner);
+            GlobalControl.Instance.objPos = tempSpawner.GetComponent<CharacterItemsSpawner>().InstancedCharacterItemList[0].position;
+
+            objTemplete.GetComponent<ObjectBehavior>().unitSO = specialSO;
+
+            GameObject tempObj = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
+            
+            //objBe.generatorSO = generatorSO;
+
         }
 
     }
@@ -119,6 +136,6 @@ public class TimerManager : MonoBehaviour
 
     void CreateObj(GameObject obj)
     {
-        objNew = Instantiate(obj, obj.transform.position - new Vector3(1, 1, 0),obj.transform.rotation);
+        //objNew = Instantiate(obj, obj.transform.position - new Vector3(1, 1, 0),obj.transform.rotation);
     }
 }

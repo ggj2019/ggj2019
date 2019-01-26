@@ -651,6 +651,8 @@ MonoBehaviour:
   time: 0
   npcPos: {x: 0, y: 0, z: 0}
   npcDir: {x: 0, y: 0, z: 0}
+  objPos: {x: 0, y: 0, z: 0}
+  timeIsSet: 0
 --- !u!4 &988109442
 Transform:
   m_ObjectHideFlags: 0

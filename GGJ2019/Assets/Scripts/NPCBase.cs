@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCBase : MonoBehaviour
 {
     public GameObject npc;
+    public GameObject objTemplete;
     public NPCSO npcSO;
     public ListSO showSO;
 
@@ -20,6 +21,9 @@ public class NPCBase : MonoBehaviour
             Instantiate(npc);
             
         }
+
+        
+
     }
 
     // Update is called once per frame

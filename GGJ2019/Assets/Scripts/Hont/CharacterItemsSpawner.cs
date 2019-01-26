@@ -10,11 +10,9 @@ public class CharacterItemsSpawner : MonoBehaviour
     static bool mIsInited;
     static List<CharacterItem> instancedCharacterItemList = new List<CharacterItem>();
 
-    [SerializeField]
-    NPCSO npcSO;
+    public NPCSO npcSO;
 
-    [SerializeField]
-    ListSO characterInfoSO;
+    public ListSO characterInfoSO;
 
     public List<CharacterItem> InstancedCharacterItemList { get { return instancedCharacterItemList; } }
 
@@ -36,14 +34,15 @@ public class CharacterItemsSpawner : MonoBehaviour
             }
         }
 
-        foreach (var item in instancedCharacterItemList)
-        {
-            var go = new GameObject(item.unit.name + "_item");
-            go.transform.SetParent(transform);
-            go.transform.position = item.position;
-            go.AddComponent<SpriteRenderer>().sprite = item.unit.objectIcon;
-            item.targetItem = go;
-        }
+        //foreach (var item in instancedCharacterItemList)
+        //{
+        //    var go = new GameObject(item.unit.name + "_item");
+        //    go.transform.SetParent(transform);
+        //    go.transform.position = item.position;
+        //    go.AddComponent<SpriteRenderer>().sprite = item.unit.objectIcon;
+        //    item.targetItem = go;
+        //    go.SetActive();
+        //}
     }
 
     void OnDrawGizmosSelected()

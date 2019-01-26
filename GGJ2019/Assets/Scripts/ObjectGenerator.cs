@@ -16,7 +16,7 @@ public class ObjectGenerator : MonoBehaviour
         for(int i = 0; i < generatorSO.units.Count; i++)
         {
             temp = Instantiate(objTemplete);
-            temp.transform.position += new Vector3(1, 0, 0) * i;
+            //temp.transform.position += new Vector3(1, 0, 0) * i;
             ObjectBehavior objBe = temp.GetComponent<ObjectBehavior>();
             objBe.unitSO = generatorSO.units[i];
             objBe.generatorSO = generatorSO;
