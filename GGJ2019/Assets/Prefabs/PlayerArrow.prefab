@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692828495478243867}
   - component: {fileID: 424540619409335046}
-  - component: {fileID: 5373390685456936456}
+  - component: {fileID: 5713150458184352300}
   m_Layer: 0
   m_Name: PlayerArrow
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5373390685456936456
+--- !u!114 &5713150458184352300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4845461773059900798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38047486bc4947442b271e56bebbd7e4, type: 3}
+  m_Script: {fileID: 11500000, guid: edf05102668c20b46a3c5d6583cfad8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0.9

@@ -27,7 +27,7 @@ public class HeadIconUI : MonoBehaviour
 
     void Update()
     {
-        if (currentNPC.activeSelf)
+        if (currentNPC && currentNPC.activeSelf)
         {
             const float EPS = 0.000001f;
             var t = Mathf.Clamp01(currentNPC.transform.position.magnitude / (npcSO.lengthLimit + EPS));

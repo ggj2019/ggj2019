@@ -9,6 +9,10 @@ public class NPCBase : MonoBehaviour
     public NPCSO npcSO;
     public ListSO showSO;
 
+    public GameObject playerArrow;
+
+    GameObject temp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +25,9 @@ public class NPCBase : MonoBehaviour
             Instantiate(npc);
 
             objTemplete.GetComponent<ObjectBehavior>().unitSO = showSO.units[0];
-            Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
-
+            temp = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
+            playerArrow.GetComponent<PlayerArrow>().npcGO = temp;
         }
-
-        
-
     }
 
     // Update is called once per frame
