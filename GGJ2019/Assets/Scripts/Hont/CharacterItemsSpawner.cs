@@ -8,7 +8,7 @@ public class CharacterItemsSpawner : MonoBehaviour
     public static CharacterItemsSpawner Instance { get { return mInstance; } }
 
     static bool mIsInited;
-    static List<CharacterItem> instancedCharacterItemList;
+    static List<CharacterItem> instancedCharacterItemList = new List<CharacterItem>();
 
     [SerializeField]
     NPCSO npcSO;
