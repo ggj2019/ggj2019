@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 845fb536465ed904993a0da37c3f9266, type: 3}
-  m_Name: Timer SO
+  m_Script: {fileID: 11500000, guid: dab8f7c32cb547b4783c6f5bc4c25fff, type: 3}
+  m_Name: NPCSO
   m_EditorClassIdentifier: 
-  timeLimit: 20
-  round: 6
-  current: 20
+  lengthLimit: 30
+  effectLength: 20
+  timeLimit: 6
+  currentPos: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}

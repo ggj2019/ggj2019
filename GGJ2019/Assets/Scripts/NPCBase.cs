@@ -15,10 +15,11 @@ public class NPCBase : MonoBehaviour
 
         if(showSO.units.Count == 1)
         {
+            Debug.Log("here");
             npc.GetComponent<NPCBehavior>().unitSO = showSO.units[0];
+            Instantiate(npc);
+            
         }
-        
-        Instantiate(npc);
     }
 
     // Update is called once per frame

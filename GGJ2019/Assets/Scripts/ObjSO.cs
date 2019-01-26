@@ -2,33 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObject/TimerSO")]
-public class TimerSO : ScriptableObject
+[CreateAssetMenu(menuName = "ScriptableObject/ObjSO")]
+public class ObjSO : ScriptableObject
 {
     static bool isInit;
-    public float timeLimit;
-    public int round;
 
-    public float current;
+    public Vector3 pos;
 
-    float mCacheCurrent;
+    public Vector3 dir;
+
+
+    Vector3 mCacheCurrentPos;
 
     private void OnEnable()
     {
         if (!isInit)
         {
-            mCacheCurrent = current;
+            mCacheCurrentPos = pos;
             isInit = true;
         }
         else
         {
-            current = mCacheCurrent;
+            pos = mCacheCurrentPos;
         }
     }
 
     void OnDisable()
     {
         if (Application.isPlaying)
-            mCacheCurrent = current;
+            mCacheCurrentPos = pos;
     }
 }

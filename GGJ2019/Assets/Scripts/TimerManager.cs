@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class TimerManager : MonoBehaviour
 {
     public Image timeImage;
     public Text timeText;
+
     public TimerSO timerSO;
 
     public ListSO lostSO;
@@ -26,11 +29,14 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         
+        //timerSO = Resources.Load<TimerSO>("SOs/Timer/TimerSO");
+        //Debug.Log(timerSO.GetHashCode());
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Resources.Load();
         int count = (int)(timerSO.current / timerSO.round);
         timeText.text = count.ToString();
         timeImage.fillAmount = (timerSO.current / timerSO.round) - count;

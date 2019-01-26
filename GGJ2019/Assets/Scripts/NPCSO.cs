@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/NPCSO")]
 public class NPCSO : ScriptableObject
 {
+    static bool isInit;
+
     public float lengthLimit;
 
     public float effectLength;
@@ -14,5 +16,33 @@ public class NPCSO : ScriptableObject
     public Vector3 currentPos;
 
     public Vector3 dir;
+
+
+    Vector3 mCacheCurrentPos;
+
+    Vector3 mCacheDir;
+
+    private void OnEnable()
+    {
+        if (!isInit)
+        {
+            isInit = true;
+        }
+        else
+        {
+            currentPos = mCacheCurrentPos;
+            dir = mCacheDir;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (Application.isPlaying)
+        {
+            mCacheCurrentPos = currentPos;
+            mCacheDir = dir;
+        }
+            
+    }
 }
 

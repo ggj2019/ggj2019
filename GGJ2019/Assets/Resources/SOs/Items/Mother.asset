@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mother
   m_EditorClassIdentifier: 
   unitStatus: 0
-  peopleIcon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  objectIcon: {fileID: 21300000, guid: 90a4c4dfb6a6ea34192d7e92821e3b1c, type: 3}
+  peopleIcon: {fileID: 21300000, guid: dbd7753771a0153439504c0773adf725, type: 3}
+  objectIcon: {fileID: 21300000, guid: d96bd58f4f6a9e54bb9c575391cf10e8, type: 3}
   objName: Mother
   dead: 0
