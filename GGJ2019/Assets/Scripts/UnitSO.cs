@@ -8,6 +8,7 @@ public class UnitSO : ScriptableObject
     public UnitStatus unitStatus;
     public Sprite peopleIcon;
     public Sprite objectIcon;
+    public Sprite worldMapIcon;
     public string objName;
     public bool dead;
 }
