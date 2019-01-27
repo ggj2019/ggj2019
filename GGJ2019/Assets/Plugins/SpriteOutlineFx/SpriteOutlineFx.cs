@@ -25,8 +25,6 @@ public class SpriteOutlineFx : MonoBehaviour
         set { _sampleDistance = value; }
     }
 
-    [SerializeField] Shader shader;
-
     Material _material;
     CommandBuffer mCB;
 
@@ -55,7 +53,7 @@ public class SpriteOutlineFx : MonoBehaviour
     {
         if (_material == null)
         {
-            _material = new Material(shader);
+            _material = new Material(Shader.Find("Hidden/Sprite Outline"));
             _material.hideFlags = HideFlags.DontSave;
         }
     }
