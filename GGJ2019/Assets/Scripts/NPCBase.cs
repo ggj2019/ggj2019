@@ -23,17 +23,14 @@ public class NPCBase : MonoBehaviour
 
     //public GameObject objTemplete;
 
-    private void OnEnable()
+    // Start is called before the first frame update
+    void Start()
     {
         if (!GlobalControl.Instance.spawnLeave)
         {
             leaveObjSpawner.GetComponent<CharacterItemsSpawner>().soList = UnitManager.Instance.LeaveHomeUnits;
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
         npc.GetComponent<NPCBehavior>().npcSO = npcSO;
 
         if(showSO.units.Count == 1)
@@ -52,15 +49,13 @@ public class NPCBase : MonoBehaviour
         if (!GlobalControl.Instance.spawnLeave)
         {
             tempSpawner = Instantiate(leaveObjSpawner);
-            GlobalControl.Instance.leaveList = tempSpawner.GetComponent<CharacterItemsSpawner>().InstancedCharacterItemList;
+            GlobalControl.Instance.leaveList = new List<CharacterItem>(tempSpawner.GetComponent<CharacterItemsSpawner>().InstancedCharacterItemList);
             GlobalControl.Instance.spawnLeave = true;
         }
 
 
-
         for(int i = 0; i < GlobalControl.Instance.leaveList.Count; i++)
         {
-            Debug.Log("here");
             objTemplete.GetComponent<ObjectBehavior>().unitSO = GlobalControl.Instance.leaveList[i].unit;
             Instantiate(objTemplete, GlobalControl.Instance.leaveList[i].position, objTemplete.transform.rotation);
         }

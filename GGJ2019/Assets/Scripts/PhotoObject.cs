@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhotoUnit : MonoBehaviour
+public class PhotoObject : MonoBehaviour
 {
     public UnitSO unitSO;
 
@@ -29,17 +29,17 @@ public class PhotoUnit : MonoBehaviour
             }
         }
 
-        if (isLeaveList)
-        {
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
-        }
-        else
-        {
+        //if (isLeaveList)
+        //{
+        //    sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0);
+        //}
+        //else
+        //{
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1);
-        }
+        //}
 
         leave = false;
-        if (unitSO.dead || unitSO.unitStatus == UnitStatus.Empty || unitSO.unitStatus == UnitStatus.Object)
+        if (unitSO.unitStatus == UnitStatus.Empty || unitSO.unitStatus == UnitStatus.People)
         {
             leave = true;
         }
@@ -48,19 +48,19 @@ public class PhotoUnit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLeaveList)
-        {
-            if(!leave)
-            {
-                if(time < changeTime)
-                {
-                    time += Time.deltaTime;
-                    sr.color = Color.Lerp(sr.color, new Color(sr.color.r, sr.color.g, sr.color.b, 1), 0.1f);
-                }
-            }
-        }
-        else
-        {
+        //if (isLeaveList)
+        //{
+        //    if (!leave)
+        //    {
+        //        if (time < changeTime)
+        //        {
+        //            time += Time.deltaTime;
+        //            sr.color = Color.Lerp(sr.color, new Color(sr.color.r, sr.color.g, sr.color.b, 1), 0.1f);
+        //        }
+        //    }
+        //}
+        //else
+        //{
 
             if (leave)
             {
@@ -70,6 +70,6 @@ public class PhotoUnit : MonoBehaviour
                     sr.color = Color.Lerp(sr.color, new Color(sr.color.r, sr.color.g, sr.color.b, 0), 0.1f);
                 }
             }
-        }
+        //}
     }
 }

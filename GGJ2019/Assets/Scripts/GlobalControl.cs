@@ -20,7 +20,8 @@ public class GlobalControl : MonoBehaviour
 
     public bool spawnLeave = false;
 
-    public List<CharacterItem> leaveList;
+    static List<CharacterItem> mLeaveList;
+    public List<CharacterItem> leaveList { get { return mLeaveList; } set { mLeaveList = value; } }
 
     public UnitSO[] stayArray;
 
