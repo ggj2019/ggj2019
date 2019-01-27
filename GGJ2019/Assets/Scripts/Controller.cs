@@ -60,11 +60,13 @@ public class Controller : MonoBehaviour
 
             Vector3 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
-            transform.Translate(input * velocity * Time.deltaTime);
-                
+            transform.Translate(input * velocity * Time.deltaTime, Space.World);
+            if (input.magnitude > 0.3f)
+                transform.up = input.normalized;
+
             UpdateMask(backgroundImg);
         }
-        
+
     }
 
     public void UpdatePack()
@@ -75,7 +77,7 @@ public class Controller : MonoBehaviour
     void UpdateMask(Image img)
     {
         float length = Vector3.Distance(transform.position, new Vector3(0, 0, 0));
-        
+
 
         if (length >= npcSO.lengthLimit)
         {
@@ -84,7 +86,7 @@ public class Controller : MonoBehaviour
             timerManager.canTime = false;
 
             endingController.EndWithParameter(End.Lost);
-            
+
             //SceneManager.LoadScene(lostEndIndex);
         }
 
@@ -100,7 +102,7 @@ public class Controller : MonoBehaviour
             img.color = new Color(color.r, color.g, color.b, 0);
         }
 
-       
-        
+
+
     }
 }
