@@ -70,13 +70,13 @@ public class EndingController : MonoBehaviour
         switch (end)
         {
             case End.Lost:
-                sentence1 = "End Lost";
+                sentence1 = "在追寻家人的途中，无线电信号丢失";
                 break;
             case End.Gone:
-                sentence1 = "End Gone";
+                sentence1 = "虽然没能找回全部家人，但至少你找到了一半";
                 break;
             case End.Normal:
-                sentence1 = "End Normal";
+                sentence1 = "恭喜你，成功留住了家人";
                 break;
             default:
                 break;
@@ -113,13 +113,13 @@ public class EndingController : MonoBehaviour
         switch (end)
         {
             case End.Lost:
-                sentence2 = "End Lost";
+                sentence2 = "你将永远在星球上流浪";
                 break;
             case End.Gone:
-                sentence2 = "End Gone";
+                sentence2 = "你的努力，换来今年的全家福";
                 break;
             case End.Normal:
-                sentence2 = "End Normal";
+                sentence2 = "在0110201号星球，重建了家";
                 break;
             default:
                 break;
