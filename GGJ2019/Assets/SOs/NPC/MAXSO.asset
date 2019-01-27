@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab8f7c32cb547b4783c6f5bc4c25fff, type: 3}
   m_Name: MAXSO
   m_EditorClassIdentifier: 
-  lengthLimit: 36
+  lengthLimit: 60
   effectLength: 6
-  timeLimit: 10
+  timeLimit: 55
