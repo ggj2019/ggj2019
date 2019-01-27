@@ -909,7 +909,7 @@ MonoBehaviour:
   currentNPC: {fileID: 0}
   headPhotoImage: {fileID: 1410412567}
   totalSO: {fileID: 11400000, guid: a3bf049b05825944f90cdfe65f004c55, type: 2}
-  goneIndex: 3
+  goneIndex: 4
   currentNPCToEdgeGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f82244e5a6fd64b9f2f7537e0472d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!1 &2080758245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   pack: {fileID: 1781723765}
   npcSO: {fileID: 11400000, guid: d24aaf62c2386a141a7093c03ffe7bd1, type: 2}
   backgroundImg: {fileID: 1658084100}
-  lostEndIndex: 2
+  lostEndIndex: 3
 --- !u!50 &2080758250
 Rigidbody2D:
   serializedVersion: 4

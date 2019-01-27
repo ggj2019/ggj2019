@@ -23,38 +23,43 @@ public class UnitManager : MonoBehaviour
 
     public bool isDirty;
 
+    public void ManualGroup()
+    {
+        Shuffle(totalUnit.units);
+
+        mStayHomeUnits = totalUnit.units.Take(3).ToArray();
+        mLeaveHomeUnits = totalUnit.units.Skip(3).ToArray();
+
+        for (int i = 0; i < 3; i++)
+        {
+            mLeaveHomeUnits[i].unitStatus = UnitStatus.Empty;
+            mLeaveHomeUnits[i].dead = false;
+        }
+
+
+        //Debug.Log(mLeaveHomeUnits[0].objName +" "+ mLeaveHomeUnits[1].objName);
+
+        for (int i = 0; i < 3; i++)
+        {
+            mStayHomeUnits[i].unitStatus = UnitStatus.People;
+            mStayHomeUnits[i].dead = false;
+        }
+        GlobalControl.Instance.stayArray = mStayHomeUnits;
+
+        //mStayHomeUnits[0].unitStatus = UnitStatus.People;
+        //mStayHomeUnits[1].unitStatus = UnitStatus.People;
+        //mStayHomeUnits[2].unitStatus = UnitStatus.People;
+    }
+
     void Awake()
     {
         mInstance = this;
 
         if(!mInit)
         {
-            Shuffle(totalUnit.units);
+            ManualGroup();
 
-            mStayHomeUnits = totalUnit.units.Take(3).ToArray();
-            mLeaveHomeUnits = totalUnit.units.Skip(3).ToArray();
-
-            for(int i = 0; i < 3; i++)
-            {
-                mLeaveHomeUnits[i].unitStatus = UnitStatus.Empty;
-                mLeaveHomeUnits[i].dead = false;
-            }
-
-
-            //Debug.Log(mLeaveHomeUnits[0].objName +" "+ mLeaveHomeUnits[1].objName);
-
-            for (int i = 0; i < 3; i++)
-            {
-                mStayHomeUnits[i].unitStatus = UnitStatus.People;
-                mStayHomeUnits[i].dead = false;
-            }
-            GlobalControl.Instance.stayArray = mStayHomeUnits;
-
-            //mStayHomeUnits[0].unitStatus = UnitStatus.People;
-            //mStayHomeUnits[1].unitStatus = UnitStatus.People;
-            //mStayHomeUnits[2].unitStatus = UnitStatus.People;
-
-            mInit = true;
+             mInit = true;
             isDirty = true;
             //spawnLeave = false;
         }
