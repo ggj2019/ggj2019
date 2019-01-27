@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour
 {
 
-    public float velocity = 1.0f;
+    public float velocity = 200.0f;
 
     // SO for pack and maxium size is 2.
     public ListSO packSO;
@@ -38,23 +38,30 @@ public class Controller : MonoBehaviour
     {
         if (canControl)
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.position += new Vector3(0, 1, 0) * velocity;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.position -= new Vector3(0, 1, 0) * velocity;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position -= new Vector3(1, 0, 0) * velocity;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.position += new Vector3(1, 0, 0) * velocity;
-            }
+            //if (Input.GetKey(KeyCode.W))
+            //{
+            //    transform.position += new Vector3(0, 1, 0) * velocity;
+            //}
+            //if (Input.GetKey(KeyCode.S))
+            //{
+            //    transform.position -= new Vector3(0, 1, 0) * velocity;
+            //}
+            //if (Input.GetKey(KeyCode.A))
+            //{
+            //    transform.position -= new Vector3(1, 0, 0) * velocity;
+            //}
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    transform.position += new Vector3(1, 0, 0) * velocity;
+            //}
 
+            //float x = Input.GetAxis("Horizontal");
+            //float y = Input.GetAxis("Vertical");
+
+            Vector3 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+
+            transform.Translate(input * velocity * Time.deltaTime);
+                
             UpdateMask(backgroundImg);
         }
         

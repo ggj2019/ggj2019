@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845fb536465ed904993a0da37c3f9266, type: 3}
   m_Name: TimerSO
   m_EditorClassIdentifier: 
-  timeLimit: 20
-  round: 6
-  current: 20
+  timeLimit: 300
+  round: 60

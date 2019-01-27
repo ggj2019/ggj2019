@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0479f2119488ca44db2af32227aa8133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.5
+  velocity: 20
   packSO: {fileID: 11400000, guid: a6c057394c6c1b64897da32e19c0ce02, type: 2}
   pack: {fileID: 1781723765}
   npcSO: {fileID: 11400000, guid: d24aaf62c2386a141a7093c03ffe7bd1, type: 2}
