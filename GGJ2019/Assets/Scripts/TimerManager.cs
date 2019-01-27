@@ -33,6 +33,8 @@ public class TimerManager : MonoBehaviour
 
     public HeadIconUI headIconUI;
 
+    public GameObject mapPanel;
+
     GameObject tempSpawner;
     // Start is called before the first frame update
     void Start()
@@ -119,6 +121,8 @@ public class TimerManager : MonoBehaviour
 
             // create obj 
             obj.GetComponent<ObjectBehavior>().unitSO = specialSO;
+            obj.GetComponent<ObjectBehavior>().mapPanel = mapPanel;
+            mapPanel.GetComponent<MapPanel>().isChanged = true;
 
             objSpawner.GetComponent<CharacterItemsSpawner>().npcSO = npcBe.npcSO;
             objSpawner.GetComponent<CharacterItemsSpawner>().soList = new UnitSO[] { specialSO };
@@ -127,16 +131,19 @@ public class TimerManager : MonoBehaviour
             GlobalControl.Instance.objPos = tempSpawner.GetComponent<CharacterItemsSpawner>().InstancedCharacterItemList[0].position;
 
             objTemplete.GetComponent<ObjectBehavior>().unitSO = specialSO;
+            objTemplete.GetComponent<ObjectBehavior>().mapPanel = mapPanel;
+            mapPanel.GetComponent<MapPanel>().isChanged = true;
 
+            
             GameObject tempObj = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
-
+            Debug.Log(tempObj);
         }
 
     }
 
     void RandomNewNPC(NPCSO npcSO)
     {
-        Debug.Log("Random a npc");
+        //Debug.Log("Random a npc");
         GlobalControl.Instance.npcPos = new Vector3(0, 0, 0);
         GlobalControl.Instance.npcDir = Random.insideUnitCircle;
         npcSO.timeLimit = timerSO.round;

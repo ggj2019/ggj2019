@@ -10,6 +10,8 @@ public class ObjectBehavior : MonoBehaviour
 
     public ListSO showSO;
 
+    public GameObject mapPanel;
+
     [HideInInspector]
     public ListSO generatorSO;
 
@@ -63,10 +65,14 @@ public class ObjectBehavior : MonoBehaviour
                     break;
                 }
             }
-
+            
             showSO.units.Remove(unitSO);
 
             lostSO.units.Remove(unitSO);
+
+            mapPanel.GetComponent<MapPanel>().isChanged = true;
+            //mapPanel.isChanged = true;
+
             Destroy(gameObject);
         }
     }

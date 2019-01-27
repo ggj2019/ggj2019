@@ -32,4 +32,7 @@ public class CollectionControl : MonoBehaviour
             UnitManager.Instance.isDirty = false;
         }
     }
+
+
+
 }

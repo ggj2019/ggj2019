@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class EndingController : MonoBehaviour
 {
+    public ListSO lostSO;
+    public ListSO showSO;
     public Image backgroundBackTop;
     public Text centerText;
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class EndingController : MonoBehaviour
 
     public void EndWithParameter(End end)
     {
+        lostSO.units.Clear();
+        showSO.units.Clear();
         StartCoroutine(EndGameCoroutine(end));
     }
 

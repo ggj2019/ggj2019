@@ -24,6 +24,8 @@ public class NPCBase : MonoBehaviour
 
     GameObject tempSpawner;
 
+    public GameObject mapPanel;
+
     //public GameObject objTemplete;
 
     // Start is called before the first frame update
@@ -43,6 +45,7 @@ public class NPCBase : MonoBehaviour
             tempNPC = Instantiate(npc);
 
             objTemplete.GetComponent<ObjectBehavior>().unitSO = showSO.units[0];
+            objTemplete.GetComponent<ObjectBehavior>().mapPanel = mapPanel;
             temp = Instantiate(objTemplete, GlobalControl.Instance.objPos, objTemplete.transform.rotation);
             playerArrow.GetComponent<PlayerArrow>().npcGO = temp;
 
@@ -62,6 +65,8 @@ public class NPCBase : MonoBehaviour
         {
             //Debug.Log(i +" "+GlobalControl.Instance.leaveList[i].unit);
             objTemplete.GetComponent<ObjectBehavior>().unitSO = GlobalControl.Instance.leaveList[i].unit;
+            objTemplete.GetComponent<ObjectBehavior>().mapPanel = mapPanel;
+            mapPanel.GetComponent<MapPanel>().isChanged = true;
             Instantiate(objTemplete, GlobalControl.Instance.leaveList[i].position, objTemplete.transform.rotation);
         }
 

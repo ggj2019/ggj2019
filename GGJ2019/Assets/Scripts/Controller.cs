@@ -35,7 +35,7 @@ public class Controller : MonoBehaviour
         canRun = false;
         for(int i = 0; i < totalSO.units.Count; i++)
         {
-            if(totalSO.units[i].dead != true && totalSO.units[i].unitStatus == UnitStatus.Empty)
+            if(totalSO.units[i].dead != true && (totalSO.units[i].unitStatus == UnitStatus.Empty || totalSO.units[i].unitStatus == UnitStatus.People))
             {
                 canRun = true;
             }
@@ -101,6 +101,7 @@ public class Controller : MonoBehaviour
 
         if (length >= npcSO.lengthLimit)
         {
+            Debug.Log("OUT");
             canControl = false;
 
             timerManager.canTime = false;

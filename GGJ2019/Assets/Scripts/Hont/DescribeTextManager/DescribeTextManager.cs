@@ -67,6 +67,7 @@ public class DescribeTextManager : MonoBehaviour
         yield return GradientText(content, str => targetText.text = str, sb, 0.8f);
         yield return new WaitForSeconds(2f);
         targetText.text = "";
+        mLastDescribeTextObject = null;
     }
 
     IEnumerator GradientText(string textIn, Action<string> textOut, StringBuilder cacheSB, float duration)
