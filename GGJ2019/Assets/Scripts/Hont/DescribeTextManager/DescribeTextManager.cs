@@ -14,6 +14,8 @@ public class DescribeTextManager : MonoBehaviour
     public Text targetText;
     public LayerMask DescribeTextObjectLayerMask;
 
+    DescribeTextObject mLastDescribeTextObject;
+
 
     void Awake()
     {
@@ -33,15 +35,22 @@ public class DescribeTextManager : MonoBehaviour
             rootCanvasGroup.alpha = 1f;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var hit = default(RaycastHit);
+        if (Physics.Raycast(ray, out hit, DescribeTextObjectLayerMask))
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var hit = default(RaycastHit);
-            if (Physics.Raycast(ray, out hit, DescribeTextObjectLayerMask))
-            {
-                var content = hit.transform.GetComponent<DescribeTextObject>().content;
+            var describeTextObject = hit.transform.GetComponent<DescribeTextObject>();
 
-                PopupText(content);
+            if (!describeTextObject.needHit || Input.GetMouseButtonDown(0))
+            {
+                if(mLastDescribeTextObject!=describeTextObject)
+                {
+                    var content = describeTextObject.content;
+
+                    PopupText(content);
+
+                    mLastDescribeTextObject = describeTextObject;
+                }
             }
         }
     }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class DescribeTextObject : SpriteOutlineItem
 {
     public string content;
+    public bool needHit = true;
 }
