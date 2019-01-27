@@ -20,35 +20,44 @@ public class Controller : MonoBehaviour
 
     public int lostEndIndex;
 
+    public bool canControl;
+
+    public EndingController endingController;
+
+    public TimerManager timerManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        canControl = true;
         pack.GetComponent<PackManager>().packSO = packSO;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (canControl)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += new Vector3(0, 1, 0) * velocity;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.position -= new Vector3(0, 1, 0) * velocity;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= new Vector3(1, 0, 0) * velocity;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += new Vector3(1, 0, 0) * velocity;
+            }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-             transform.position += new Vector3(0, 1, 0) * velocity;
+            UpdateMask(backgroundImg);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= new Vector3(0, 1, 0) * velocity;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= new Vector3(1, 0, 0) * velocity;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3(1, 0, 0) * velocity;
-        }
-
-
-        UpdateMask(backgroundImg);
+        
     }
 
     public void UpdatePack()
@@ -63,7 +72,13 @@ public class Controller : MonoBehaviour
 
         if (length >= npcSO.lengthLimit)
         {
-            SceneManager.LoadScene(lostEndIndex);
+            canControl = false;
+
+            timerManager.canTime = false;
+
+            endingController.EndWithParameter(End.Lost);
+            
+            //SceneManager.LoadScene(lostEndIndex);
         }
 
         Color color = img.color;

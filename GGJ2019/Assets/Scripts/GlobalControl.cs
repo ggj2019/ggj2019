@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum End {Lost, Gone, Normal}
+
 public class GlobalControl : MonoBehaviour
 {
     public static GlobalControl Instance;
@@ -25,6 +27,8 @@ public class GlobalControl : MonoBehaviour
 
     public UnitSO[] stayArray;
 
+    GameObject endingController;
+
     static bool changed;
 
     private void Awake()
@@ -46,9 +50,22 @@ public class GlobalControl : MonoBehaviour
     {
         if(time < 0 && !changed)
         {
-            SceneManager.LoadScene(normalIndex);
+            if (GameObject.FindGameObjectWithTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().canControl = false;
+            }
+
+            //SceneManager.LoadScene(normalIndex);
             changed = true;
+
+            if (GameObject.FindGameObjectWithTag("EndingController"))
+            {
+                GameObject.FindGameObjectWithTag("EndingController").GetComponent<EndingController>().EndWithParameter(End.Normal);
+            }
+
+            
         }
-        
     }
+
+    
 }

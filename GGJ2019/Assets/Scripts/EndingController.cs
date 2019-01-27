@@ -1,28 +1,32 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour
+public class EndingController : MonoBehaviour
 {
     public Image backgroundBackTop;
-    public Button startGameButton;
-    public Button exitGameButton;
-    public Animator animator;
     public Text centerText;
-    public CanvasGroup elementRoot;
-
-    public int homeIndex;
-
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        startGameButton.onClick.AddListener(onStartGameBtnClicked);
-        exitGameButton.onClick.AddListener(onExitGameBtnClicked);
-
-        StartCoroutine(Show());
+        
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+
+    public void EndWithParameter(End end)
+    {
+        StartCoroutine(EndGameCoroutine(end));
+    }
+
 
     IEnumerator Show()
     {
@@ -48,31 +52,36 @@ public class MainMenuUI : MonoBehaviour
             var t = Time.time - beginTime / duration;
             var tt = (t - 1f) * (t - 1f) * (t - 1f) + 1f;
 
-            elementRoot.alpha = Mathf.Lerp(1f, 0f, tt);
+            //elementRoot.alpha = Mathf.Lerp(1f, 0f, tt);j
 
             yield return null;
         }
-        elementRoot.alpha = 0f;
+        //elementRoot.alpha = 0f;
     }
 
-    void onStartGameBtnClicked()
+    IEnumerator EndGameCoroutine(End end)
     {
-        StartCoroutine(StartGameCoroutine());
-    }
-
-    void onExitGameBtnClicked()
-    {
-        Application.Quit();
-    }
-
-    IEnumerator StartGameCoroutine()
-    {
-        yield return Fade();
-        animator.Play("Anim1");
+        //yield return Fade();
+        backgroundBackTop.enabled = true;
 
         yield return new WaitForSeconds(0.5f);
 
-        centerText.text = "2140年，地球毁灭前，人类被迫在星际航行";
+        string sentence1="";
+        switch (end)
+        {
+            case End.Lost:
+                sentence1 = "End Lost";
+                break;
+            case End.Gone:
+                sentence1 = "End Gone";
+                break;
+            case End.Normal:
+                sentence1 = "End Normal";
+                break;
+            default:
+                break;
+        }
+        centerText.text = sentence1;
 
         var beginTime = Time.time;
         for (var duration = 1f; Time.time - beginTime <= duration;)
@@ -100,7 +109,22 @@ public class MainMenuUI : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        centerText.text = "最终, 飞船在20年前降落在银河系外的0110201号星球";
+        string sentence2="";
+        switch (end)
+        {
+            case End.Lost:
+                sentence2 = "End Lost";
+                break;
+            case End.Gone:
+                sentence2 = "End Gone";
+                break;
+            case End.Normal:
+                sentence2 = "End Normal";
+                break;
+            default:
+                break;
+        }
+        centerText.text = sentence2;
 
         beginTime = Time.time;
         for (var duration = 1f; Time.time - beginTime <= duration;)
@@ -126,6 +150,19 @@ public class MainMenuUI : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(homeIndex);
+        switch (end)
+        {
+            case End.Lost:
+                SceneManager.LoadScene(3);
+                break;
+            case End.Gone:
+                SceneManager.LoadScene(4);
+                break;
+            case End.Normal:
+                SceneManager.LoadScene(5);
+                break;
+            default:
+                break;
+        }
     }
 }

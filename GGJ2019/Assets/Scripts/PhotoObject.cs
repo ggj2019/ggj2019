@@ -67,7 +67,7 @@ public class PhotoObject : MonoBehaviour
                 if (time < changeTime)
                 {
                     time -= Time.deltaTime;
-                    sr.color = Color.Lerp(sr.color, new Color(sr.color.r, sr.color.g, sr.color.b, 0), 0.1f);
+                    sr.color = Color.Lerp(sr.color, new Color(sr.color.r, sr.color.g, sr.color.b, 0), 9 * Time.deltaTime);
                 }
             }
         //}

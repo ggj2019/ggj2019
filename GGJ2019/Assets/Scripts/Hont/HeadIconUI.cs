@@ -16,6 +16,12 @@ public class HeadIconUI : MonoBehaviour
 
     public int goneIndex;
 
+    public TimerManager timerManager;
+
+    public EndingController endingController;
+
+    public Controller controller;
+
     public Gradient currentNPCToEdgeGradient = new Gradient()
     {
         colorKeys = new GradientColorKey[]
@@ -56,7 +62,10 @@ public class HeadIconUI : MonoBehaviour
             }
             if (gone)
             {
-                SceneManager.LoadScene(goneIndex);
+                controller.canControl = false;
+                timerManager.canTime = false;
+                endingController.EndWithParameter(End.Gone);
+                //SceneManager.LoadScene(goneIndex);
             }
             headPhotoImage.enabled = false;
             GetComponent<HeadIconUI>().enabled = false;

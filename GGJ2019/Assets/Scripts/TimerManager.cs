@@ -22,6 +22,8 @@ public class TimerManager : MonoBehaviour
     [HideInInspector]
     public UnitSO specialSO;
 
+    public bool canTime = true;
+
     GameObject npcNew;
     GameObject objNew;
 
@@ -35,6 +37,7 @@ public class TimerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canTime = true;
         if (!GlobalControl.Instance.timeIsSet){
             GlobalControl.Instance.time = timerSO.timeLimit;
             GlobalControl.Instance.timeIsSet = true;
@@ -46,7 +49,7 @@ public class TimerManager : MonoBehaviour
     {
         //Resources.Load();
         
-        if(GlobalControl.Instance.time > 0)
+        if(GlobalControl.Instance.time > 0 && canTime == true)
         {
             int count = (int)(GlobalControl.Instance.time / timerSO.round);
             timeText.text = count.ToString();
