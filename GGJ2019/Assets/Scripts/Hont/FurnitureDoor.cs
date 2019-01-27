@@ -6,13 +6,7 @@ using UnityEngine.SceneManagement;
 public class FurnitureDoor : DescribeTextObject
 {
     public int sceneIndex = 2;
-    bool mHit1;
 
-
-    void Aawake()
-    {
-        mHit1 = false;
-    }
 
     void Update()
     {
@@ -24,9 +18,7 @@ public class FurnitureDoor : DescribeTextObject
         {
             if (Input.GetMouseButtonUp(0))
             {
-                if (mHit1)
-                    SceneManager.LoadScene(sceneIndex);
-                mHit1 = true;
+                SceneManager.LoadScene(sceneIndex);
             }
         }
     }
