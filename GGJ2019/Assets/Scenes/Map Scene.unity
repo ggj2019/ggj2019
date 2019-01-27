@@ -159,6 +159,7 @@ MonoBehaviour:
   objTemplete: {fileID: 7414558816779595289, guid: aa74eb4dc0d050443bdc45d1b46c8830,
     type: 3}
   npcSO: {fileID: 11400000, guid: d24aaf62c2386a141a7093c03ffe7bd1, type: 2}
+  npcMax: {fileID: 11400000, guid: 576a7deceb518324a9f8239d5d6d6c70, type: 2}
   showSO: {fileID: 11400000, guid: b87d61b2caa09294185b0ddad4e17a8b, type: 2}
   playerArrow: {fileID: 1918064890}
   headIconUI: {fileID: 1410412566}
@@ -1546,7 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0479f2119488ca44db2af32227aa8133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
+  velocity: 15
   packSO: {fileID: 11400000, guid: a6c057394c6c1b64897da32e19c0ce02, type: 2}
   pack: {fileID: 1781723765}
   npcSO: {fileID: 11400000, guid: d24aaf62c2386a141a7093c03ffe7bd1, type: 2}

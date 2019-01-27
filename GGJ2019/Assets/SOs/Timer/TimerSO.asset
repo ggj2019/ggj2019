@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TimerSO
   m_EditorClassIdentifier: 
   timeLimit: 300
-  round: 60
+  round: 15

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab8f7c32cb547b4783c6f5bc4c25fff, type: 3}
-  m_Name: NPCSO
+  m_Name: MAXSO
   m_EditorClassIdentifier: 
-  lengthLimit: 18
+  lengthLimit: 36
   effectLength: 6
   timeLimit: 12

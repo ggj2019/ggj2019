@@ -55,9 +55,11 @@ public class ObjectBehavior : MonoBehaviour
 
             for (int i = 0; i < GlobalControl.Instance.leaveList.Count; i++)
             {
-                if(GlobalControl.Instance.leaveList[i].unit = unitSO)
+                if(GlobalControl.Instance.leaveList[i].unit == unitSO)
                 {
+
                     GlobalControl.Instance.leaveList.RemoveAt(i);
+                    Debug.Log(i +" "+GlobalControl.Instance.leaveList.Count);
                     break;
                 }
             }

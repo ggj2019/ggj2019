@@ -30,7 +30,7 @@ public class CharacterItemsSpawner : MonoBehaviour
             foreach (var item in soList)
             {
                 var point = Random.insideUnitCircle;
-                point *= npcSO.lengthLimit;
+                point *= npcSO.lengthLimit / 2;
 
                 instancedCharacterItemList.Add(new CharacterItem() { unit = item, targetItem = null, position = point });
             }

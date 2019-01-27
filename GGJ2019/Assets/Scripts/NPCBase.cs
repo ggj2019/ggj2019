@@ -7,6 +7,9 @@ public class NPCBase : MonoBehaviour
     public GameObject npc;
     public GameObject objTemplete;
     public NPCSO npcSO;
+
+    public NPCSO npcMax;
+
     public ListSO showSO;
 
     public GameObject playerArrow;
@@ -29,6 +32,7 @@ public class NPCBase : MonoBehaviour
         if (!GlobalControl.Instance.spawnLeave)
         {
             leaveObjSpawner.GetComponent<CharacterItemsSpawner>().soList = UnitManager.Instance.LeaveHomeUnits;
+            leaveObjSpawner.GetComponent<CharacterItemsSpawner>().npcSO = npcMax;
         }
 
         npc.GetComponent<NPCBehavior>().npcSO = npcSO;
@@ -56,6 +60,7 @@ public class NPCBase : MonoBehaviour
 
         for(int i = 0; i < GlobalControl.Instance.leaveList.Count; i++)
         {
+            Debug.Log(i +" "+GlobalControl.Instance.leaveList[i].unit);
             objTemplete.GetComponent<ObjectBehavior>().unitSO = GlobalControl.Instance.leaveList[i].unit;
             Instantiate(objTemplete, GlobalControl.Instance.leaveList[i].position, objTemplete.transform.rotation);
         }
