@@ -17,7 +17,7 @@ public class SpriteOutlineFx : MonoBehaviour
         set { _outlineColor = value; }
     }
 
-    [SerializeField] float _sampleDistance = 2;
+    [SerializeField] float _sampleDistance = 3f;
 
     public float sampleDistance
     {
