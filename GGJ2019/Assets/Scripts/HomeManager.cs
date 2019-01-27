@@ -12,6 +12,10 @@ public class HomeManager : MonoBehaviour
 
     bool isEmpty = false;
 
+    public AudioSource simple;
+    public AudioSource guitar;
+    bool isGuitar = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,28 @@ public class HomeManager : MonoBehaviour
         if(isEmpty == false)
         {
             UpdateUnit();
+            isGuitar = false;
+            foreach (UnitSO u in totalSO.units)
+            {
+                if (u.objName == "Handsome")
+                {
+                    if (u.unitStatus == UnitStatus.Union)
+                    {
+                        isGuitar = true;
+
+                    }
+                    break;
+                }
+            }
+
+            if (isGuitar)
+            {
+                guitar.Play();
+            }
+            else
+            {
+                simple.Play();
+            }
         }
     }
 

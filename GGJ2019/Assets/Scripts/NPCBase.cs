@@ -60,10 +60,12 @@ public class NPCBase : MonoBehaviour
 
         for(int i = 0; i < GlobalControl.Instance.leaveList.Count; i++)
         {
-            Debug.Log(i +" "+GlobalControl.Instance.leaveList[i].unit);
+            //Debug.Log(i +" "+GlobalControl.Instance.leaveList[i].unit);
             objTemplete.GetComponent<ObjectBehavior>().unitSO = GlobalControl.Instance.leaveList[i].unit;
             Instantiate(objTemplete, GlobalControl.Instance.leaveList[i].position, objTemplete.transform.rotation);
         }
+
+        
 
     }
 

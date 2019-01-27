@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lengthLimit: 18
   effectLength: 6
-  timeLimit: 12
+  timeLimit: 10

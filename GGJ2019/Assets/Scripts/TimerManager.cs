@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour
 {
-    public Image timeImage;
+    public GameObject clockHand;
     public Text timeText;
 
     public TimerSO timerSO;
@@ -53,7 +53,13 @@ public class TimerManager : MonoBehaviour
         {
             int count = (int)(GlobalControl.Instance.time / timerSO.round);
             timeText.text = count.ToString();
-            timeImage.fillAmount = (GlobalControl.Instance.time / timerSO.round) - count;
+
+            float amount = (GlobalControl.Instance.time / timerSO.round) - count;
+
+            clockHand.transform.rotation = Quaternion.Euler(0, 0, amount * 360);
+
+            //timeImage.fillAmount = (GlobalControl.Instance.time / timerSO.round) - count;
+
             float oldTime = GlobalControl.Instance.time;
 
             if (GlobalControl.Instance.time - Time.deltaTime < 0)

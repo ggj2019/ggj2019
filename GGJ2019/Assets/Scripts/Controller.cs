@@ -26,11 +26,31 @@ public class Controller : MonoBehaviour
 
     public TimerManager timerManager;
 
+    public ListSO totalSO;
+
+    bool canRun = false;
     // Start is called before the first frame update
     void Start()
     {
-        canControl = true;
-        pack.GetComponent<PackManager>().packSO = packSO;
+        canRun = false;
+        for(int i = 0; i < totalSO.units.Count; i++)
+        {
+            if(totalSO.units[i].dead != true && totalSO.units[i].unitStatus == UnitStatus.Empty)
+            {
+                canRun = true;
+            }
+        }
+
+        if (canRun)
+        {
+            canControl = true;
+            pack.GetComponent<PackManager>().packSO = packSO;
+        }
+        else
+        {
+            endingController.EndWithParameter(End.Normal);
+        }
+        
     }
 
     // Update is called once per frame
