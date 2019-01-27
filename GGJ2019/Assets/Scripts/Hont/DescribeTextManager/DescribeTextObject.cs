@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DescribeTextObject : MonoBehaviour
+public class DescribeTextObject : SpriteOutlineItem
 {
     public string content;
 }

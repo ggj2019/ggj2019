@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xmin: 0
   xmax: 18
-  velocity: 0.1
+  velocity: 10
