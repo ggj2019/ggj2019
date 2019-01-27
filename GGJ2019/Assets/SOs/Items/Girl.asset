@@ -15,5 +15,6 @@ MonoBehaviour:
   unitStatus: 0
   peopleIcon: {fileID: 21300000, guid: d31c159d0657bcf448fd938bdf10f972, type: 3}
   objectIcon: {fileID: 21300000, guid: 8d78fb2b680c863419fb2dcd2de6aa91, type: 3}
+  worldMapIcon: {fileID: 21300000, guid: f82d3723a8abbcc4a9fc478a7eae52f5, type: 3}
   objName: Girl
   dead: 0

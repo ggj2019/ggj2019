@@ -15,5 +15,6 @@ MonoBehaviour:
   unitStatus: 0
   peopleIcon: {fileID: 21300000, guid: e1be9cf7d8c37cb4bbf5015d333a0acb, type: 3}
   objectIcon: {fileID: 21300000, guid: 627252fa5f69e864c932c2a6b4826224, type: 3}
+  worldMapIcon: {fileID: 21300000, guid: 93d268115da07cd42a0d40a3ee333d54, type: 3}
   objName: Cat
   dead: 0

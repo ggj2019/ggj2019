@@ -15,5 +15,6 @@ MonoBehaviour:
   unitStatus: 0
   peopleIcon: {fileID: 21300000, guid: dbd7753771a0153439504c0773adf725, type: 3}
   objectIcon: {fileID: 21300000, guid: 64a0e784a2dccd74f929c1261c9d93c2, type: 3}
+  worldMapIcon: {fileID: 21300000, guid: 4728ac6975a46334b941837c26901ceb, type: 3}
   objName: Mother
   dead: 0

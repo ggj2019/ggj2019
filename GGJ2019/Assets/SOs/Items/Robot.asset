@@ -15,5 +15,6 @@ MonoBehaviour:
   unitStatus: 0
   peopleIcon: {fileID: 21300000, guid: 54b10e3431175d84fa3cf9ca4451ca4d, type: 3}
   objectIcon: {fileID: 21300000, guid: 6f866f53c9ddbc640aa84f52efb793b4, type: 3}
+  worldMapIcon: {fileID: 21300000, guid: 91c6753a78350bb4e9ee9eb2f8789f1e, type: 3}
   objName: Robot
   dead: 0

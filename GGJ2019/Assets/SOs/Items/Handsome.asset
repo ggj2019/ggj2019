@@ -15,5 +15,6 @@ MonoBehaviour:
   unitStatus: 0
   peopleIcon: {fileID: 21300000, guid: 084db258be59479419714886f2ca7502, type: 3}
   objectIcon: {fileID: 21300000, guid: 287b314af4014db488028b40ba7ed680, type: 3}
+  worldMapIcon: {fileID: 21300000, guid: beccd2ce4b4c1c646b529645f5419633, type: 3}
   objName: Handsome
   dead: 0
