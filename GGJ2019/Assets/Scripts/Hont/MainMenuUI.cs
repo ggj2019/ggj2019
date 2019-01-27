@@ -102,6 +102,34 @@ public class MainMenuUI : MonoBehaviour
 
         centerText.text = "最终, 飞船在20年前降落在银河系外的0110201号星球";
 
+         beginTime = Time.time;
+        for (var duration = 1f; Time.time - beginTime <= duration;)
+        {
+            var t = Time.time - beginTime / duration;
+            var tt = (t - 1f) * (t - 1f) * (t - 1f) + 1f;
+
+            centerText.color = Color.Lerp(new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0.7f), tt);
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.7f);
+
+        beginTime = Time.time;
+        for (var duration = 1f; Time.time - beginTime <= duration;)
+        {
+            var t = Time.time - beginTime / duration;
+            var tt = (t - 1f) * (t - 1f) * (t - 1f) + 1f;
+
+            centerText.color = Color.Lerp(new Color(1f, 1f, 1f, 0.7f), new Color(1f, 1f, 1f, 0f), tt);
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        centerText.text = "因为一些重要东西的遗失，你的家人总有一些遗憾";
+
         beginTime = Time.time;
         for (var duration = 1f; Time.time - beginTime <= duration;)
         {
@@ -125,6 +153,24 @@ public class MainMenuUI : MonoBehaviour
 
             yield return null;
         }
+
+        yield return new WaitForSeconds(0.1f);
+
+        centerText.text = "找回这些物品，避免家人的离开";
+
+        beginTime = Time.time;
+        for (var duration = 1f; Time.time - beginTime <= duration;)
+        {
+            var t = Time.time - beginTime / duration;
+            var tt = (t - 1f) * (t - 1f) * (t - 1f) + 1f;
+
+            centerText.color = Color.Lerp(new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 0.7f), tt);
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1.5f);
+
 
         SceneManager.LoadScene(homeIndex);
     }
