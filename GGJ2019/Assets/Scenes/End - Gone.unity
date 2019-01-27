@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &91725573
 RectTransform:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ RectTransform:
   m_GameObject: {fileID: 1011899110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 91725573}
   m_Father: {fileID: 2140432982}
@@ -376,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 348}
-  m_SizeDelta: {x: 305.88, y: 58.49}
+  m_AnchoredPosition: {x: 20, y: 311}
+  m_SizeDelta: {x: 189, y: 83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011899112
 MonoBehaviour:
@@ -397,7 +397,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -406,9 +406,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1ad359a6fdb9df248a35c2aaf8f3718a,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: cdd04c0679e20fc43b34697680f5308f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4ad7bdb6716e65c48b294c5d0c1706ec, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -456,15 +457,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4ad7bdb6716e65c48b294c5d0c1706ec, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -983,7 +984,7 @@ PrefabInstance:
     - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
@@ -1134,7 +1135,7 @@ PrefabInstance:
     - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
@@ -1315,6 +1316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DescribeText_Test (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
@@ -1626,7 +1632,7 @@ PrefabInstance:
     - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
@@ -1731,7 +1737,7 @@ PrefabInstance:
     - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
@@ -1998,7 +2004,7 @@ PrefabInstance:
     - target: {fileID: 1297761626875732752, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1297761626875732767, guid: 3a90ad3012311174398f48a02dd083bc,
         type: 3}
